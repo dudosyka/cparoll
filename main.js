@@ -23,6 +23,7 @@ const scroll = () => {
 
 const preventDefault = e => {
     e.preventDefault()
+    console.log(e);
     if (e.deltaY > 0 && section < 3)
         section++;
     else if (e.deltaY < 0 && section > 0)
