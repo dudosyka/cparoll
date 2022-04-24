@@ -10,7 +10,7 @@
     --bg-gradient: linear-gradient(
             to bottom,
             hsl(var(--hue), 98%, 99%),
-            hsl(var(--hue), 95%, 90%)
+            hsl(var(--hue), 98%, 99%)
     );
 }
 

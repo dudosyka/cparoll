@@ -1,5 +1,8 @@
 body {
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
 .displayNone {
@@ -35,6 +38,7 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-self: center;
 }
 
 input, textarea {
@@ -74,8 +78,8 @@ ul li::before {
 }
 
 .main-title h1 {
-    font-size: 120px;
-    line-height: 110px;
+    font-size: 150px;
+    line-height: 130px;
 }
 
 .main-title .sub-title {
@@ -85,7 +89,7 @@ ul li::before {
     padding: 10px 30px 25px 40px;
     height: fit-content;
     position: relative;
-    top: 110px;
+    top: 150px;
     right: 300px
 }
 
@@ -164,8 +168,8 @@ ul li:last-child {
 }
 
 .second aside h2 {
-    font-size: 70px;
-    line-height: 65px;
+    font-size: 90px;
+    line-height: 75px;
     position: relative;
     top: 5px;
     right: 80px;
@@ -194,13 +198,13 @@ ul li:last-child {
 }
 
 .third aside h2 {
-    font-size: 70px;
+    font-size: 90px;
     margin-bottom: 70px;
 }
 
 .third aside p {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .third aside p span {
@@ -340,4 +344,20 @@ ul li:last-child {
     justify-content: space-around;
     position: relative;
     top: 65px
+}
+
+
+@media screen and (max-width: 1440px) {
+    .first {
+        padding-left: 10%;
+    }
+
+    .sub-title {
+        padding-left: 10px !important;
+        min-width: 400px;
+    }
+
+    .second-title {
+         right: 50px;
+    }
 }
