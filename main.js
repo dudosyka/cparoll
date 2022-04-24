@@ -1,74 +1,68 @@
+const writer = function (i = 0, text = "", element) {
+    if (i < text.length) {
+        element.innerHTML += text.charAt(i)
+        i++
+        setTimeout(() => {
+            writer(i, text, element)
+        }, 75)
+    }
+}
+
+const deleter = async function (element) {
+    if (element.innerText != "") {
+        element.innerText = element.innerText.substr(0, element.innerText.length - 1);
+        await deleter(element)
+    }
+}
+
 const changeBlock = function (type) {
     if (type === 1) {
-        document.getElementById('first').classList.remove('displayNone');
-        document.getElementById('second').classList.add('displayNone');
+        const el = document.getElementById('retype');
+        deleter(el).then(() => {
+            writer(0, "Monetization", el);
+        })
+        document.getElementById('block2Content_').style.opacity = '0'
+        setTimeout(() => {
+            document.getElementById('block2Content').style.opacity = '1'
+        }, 300)
     }
     else {
-        document.getElementById('first').classList.add('displayNone');
-        document.getElementById('second').classList.remove('displayNone');
+        const el = document.getElementById('retype');
+        deleter(el).then(() => {
+            writer(0, "Acquisition", el);
+        })
+        document.getElementById('block2Content').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('block2Content_').style.opacity = '1'
+        }, 300)
     }
 }
 
-let section = 0;
-let scrollDelta = 0;
-
-const blockedKeys = {37: 1, 38: 1, 39: 1, 40: 1}
-
-const scroll = () => {
-    window.scrollTo({
-        left: 0,
-        top: window.innerHeight * section,
-        behavior: 'smooth'
-    })
-}
-
-const preventDefault = e => {
-    e.preventDefault()
-    if (scrollDelta < 0 && e.deltaY > 0) {
-        scrollDelta = 0;
-        scrollDelta += e.deltaY
+const animate = function (scrollPos) {
+    if (scrollPos >= 230) {
+        document.getElementById('block2Content').style.left = "250px";
+        document.getElementById('block2Content_').style.left = "-180px";
     }
-    else if (scrollDelta > 0 && e.deltaY < 0) {
-        scrollDelta = 0;
-        scrollDelta += e.deltaY
+    else if (scrollPos < 200) {
+        document.getElementById('block2Content').style.left = "-1000px";
+        document.getElementById('block2Content_').style.left = "-1000px";
+    }
+    if (scrollPos >= 1550) {
+        document.getElementById('block3Content').style.left = "0px";
     }
     else {
-        scrollDelta += e.deltaY
+        document.getElementById('block3Content').style.left = "-1000px";
     }
-    if (e.deltaY > 0 && section < 3 && Math.abs(scrollDelta) >= 300) {
-        section++;
-        scrollDelta = 0;
+    if (scrollPos >= 2500) {
+        document.getElementById('block4Content').style.left = "0px";
     }
-    else if (e.deltaY < 0 && section > 0 && Math.abs(scrollDelta) >= 300) {
-        section--;
-        scrollDelta = 0;
+    else {
+        document.getElementById('block4Content').style.left = "-1000px";
     }
-    scroll();
 }
 
-// modern Chrome requires { passive: false } when adding event
-let supportsPassive = false;
-try {
-    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-        get: function () { supportsPassive = true; }
-    }));
-} catch(e) {}
-
-const wheelOpt = supportsPassive ? { passive: false } : false;
-const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-
-function disableScroll() {
-    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-}
-
-function enableScroll() {
-    window.removeEventListener('DOMMouseScroll', preventDefault, false);
-    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
-    window.removeEventListener('touchmove', preventDefault, wheelOpt);
-}
+window.addEventListener('scroll', function(e) {
+    console.log(e)
+    console.log(window.scrollY)
+    animate(window.scrollY)
+});
