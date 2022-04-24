@@ -15,7 +15,10 @@ const deleter = async function (element) {
     }
 }
 
+let currentBlock2 = 1;
+
 const changeBlock = function (type) {
+    currentBlock2 = type;
     if (type === 1) {
         const el = document.getElementById('retype');
         deleter(el).then(() => {
@@ -42,23 +45,37 @@ const animate = function (scrollPos) {
     console.log()
     if (scrollPos >= document.getElementById('block2Content_').offsetTop - window.innerHeight) {
         document.getElementById('block2Content').style.left = "250px";
+        if (currentBlock2 == 1)
+            document.getElementById('block2Content').style.opacity = '1'
+        else
+            document.getElementById('block2Content_').style.opacity = '1'
         document.getElementById('block2Content_').style.left = "-180px";
     }
     else if (scrollPos < document.getElementById('block2Content').offsetTop - window.innerHeight) {
         document.getElementById('block2Content').style.left = "-1000px";
+        document.getElementById('block2Content').style.opacity = '0'
         document.getElementById('block2Content_').style.left = "-1000px";
+        document.getElementById('block2Content_').style.opacity = '0'
     }
     if (scrollPos >= document.getElementById('block3Content').offsetTop - window.innerHeight) {
         document.getElementById('block3Content').style.left = "0px";
+        setTimeout(() => {
+            document.getElementById('block3Content').style.opacity = '1'
+        }, 200)
     }
     else {
         document.getElementById('block3Content').style.left = "-1000px";
+        document.getElementById('block3Content').style.opacity = '0'
     }
     if (scrollPos >= document.getElementById('block4Content').offsetTop - window.innerHeight) {
         document.getElementById('block4Content').style.left = "0px";
+        setTimeout(() => {
+            document.getElementById('block4Content').style.opacity = '1'
+        }, 200)
     }
     else {
         document.getElementById('block4Content').style.left = "-1000px";
+        document.getElementById('block4Content').style.opacity = '0'
     }
 }
 
