@@ -3,6 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    color: #2f2f2f
 }
 
 .displayNone {
@@ -35,6 +36,10 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.nav-item {
+    cursor: pointer;
 }
 
 section {
@@ -80,6 +85,7 @@ ul li::before {
     flex-direction: row;
     position: relative;
     top: 20vh;
+    left: 10%;
 }
 
 .main-title h1 {
@@ -120,25 +126,25 @@ ul li::before {
     width: fit-content;
     height: fit-content;
     padding: 80px 50px 80px 70px;
-    transition-duration: 0.7s;
+    transition-duration: 1s;
     position: relative;
 }
 
 .second-title {
     position: relative;
-    right: 200px;
+    right: 150px;
     bottom: 20px;
 }
 
 #block2Content {
     left: 100px;
-    transition-duration: 0.3s;
+    transition-duration: 1s;
     opacity: 1;
     z-index: 1000;
 }
 
 #block2Content_ {
-    transition-duration: 0.3s;
+    transition-duration: 1s;
     padding-right: 100px;
     padding-left: 100px;
     opacity: 0;
@@ -197,8 +203,7 @@ ul li:last-child {
     width: 60%;
     text-align: center;
     height: fit-content;
-    box-shadow: 0 4px 16px #d2d2d2;
-    transition-duration: 0.7s;
+    transition-duration: 1s;
     position: relative;
 }
 
@@ -233,9 +238,9 @@ ul li:last-child {
 .fourth > aside {
     flex-direction: column !important;
     background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    box-shadow: 0 4px 16px #d2d2d2;
-    transition-duration: 0.7s;
+    transition-duration: 1s;
     position: relative;
 }
 

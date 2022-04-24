@@ -113,3 +113,12 @@ const animate = function (scrollPos) {
 window.addEventListener('scroll', function(e) {
     animate(window.scrollY)
 });
+
+const scrollToSec = function (num) {
+    window.scrollTo({
+        top: document.getElementById('sec'+num).offsetTop + (window.innerHeight / 1.5),
+        left: 0,
+        behavior: 'smooth'
+    })
+
+}
