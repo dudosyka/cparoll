@@ -12,6 +12,10 @@ body {
 .scroll-label {
     width: 23px;
     height: 139px;
+    transition-duration: 0.15s;
+    position: fixed;
+    top: 48vh;
+    right: 5%;
 }
 
 .scroll-label img {
@@ -21,9 +25,10 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 105%;
     align-items: center;
+    padding: 10px 5% 10px 5%;
 }
 
 nav {
