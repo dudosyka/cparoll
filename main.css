@@ -32,6 +32,14 @@ header {
     padding: 10px 5% 10px 5%;
 }
 
+.logo {
+    width: 180px;
+}
+
+.logo img {
+    width: 100%;
+}
+
 nav {
     display: flex;
     flex-direction: row;
@@ -252,7 +260,7 @@ ul li:last-child {
 .fourth > aside {
     flex-direction: column !important;
     background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     transition-duration: 1s;
     position: relative;
