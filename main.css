@@ -1,0 +1,235 @@
+body {
+    overflow-x: hidden;
+}
+
+.displayNone {
+    display: none !important;
+}
+
+.scroll-label {
+    width: 23px;
+    height: 139px;
+}
+
+.scroll-label img {
+    width: 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 105%;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+section {
+    height: 80vh;
+    margin-bottom: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*body section:last-child {*/
+/*    margin-bottom: 0px !important;*/
+/*}*/
+
+ul {
+    list-style: none; /* Remove default bullets */
+}
+
+ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #00FF94; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.nav-item {
+    margin-right: 15%;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.main-title {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 20vh;
+}
+
+.main-title h1 {
+    font-size: 120px;
+    line-height: 110px;
+}
+
+.main-title .sub-title {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 32px;
+    font-size: 35px;
+    padding: 10px 30px 25px 40px;
+    height: fit-content;
+    position: relative;
+    top: 110px;
+    right: 300px
+}
+
+.main-title .sub-title h2:last-child {
+    text-align: right;
+}
+
+.main-title .scroll-label {
+    position: relative;
+    top: 60px;
+    right: 250px;
+}
+
+.second div {
+    display: flex;
+    flex-direction: row;
+}
+
+.second div aside:first-child {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 32px;
+    font-size: 24px;
+    width: fit-content;
+    height: fit-content;
+    padding: 80px 50px 80px 70px;
+}
+
+ul li {
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+li span {
+    font-weight: bolder !important;
+}
+
+ul li:first-child {
+    line-height: 24px;
+}
+
+ul li:last-child {
+    margin-bottom: 16px;
+}
+
+.second div aside:first-child p {
+    color: #00A3FF;
+    text-decoration: underline;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 48px;
+    position: relative;
+    right: 10px;
+}
+
+.second div aside h2 {
+    font-size: 70px;
+    line-height: 65px;
+    position: relative;
+    top: 5px;
+    right: 80px;
+}
+
+.second div:last-child aside h2 {
+    right: 60px;
+}
+
+.second div .scroll-label {
+    position: relative;
+    top: 150px
+}
+
+.third {
+    display: flex;
+    flex-direction: row;
+}
+
+.third aside {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    padding: 50px;
+    width: 60%;
+    text-align: center;
+    height: fit-content;
+    box-shadow: 0 4px 16px #d2d2d2;
+}
+
+.third aside h2 {
+    font-size: 70px;
+    margin-bottom: 70px;
+}
+
+.third aside p {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.third aside p span {
+    font-weight: bolder;
+}
+
+.third .scroll-label {
+    position: relative;
+    top: 200px;
+    left: 50px;
+}
+
+.fourth {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 70%;
+    margin-bottom: 35vh;
+}
+
+.fourth > aside {
+    flex-direction: column !important;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 16px #d2d2d2;
+}
+
+.fourth h2 {
+    font-size: 35px;
+    text-align: center;
+    margin: 20px 250px 30px;
+}
+
+.fourth aside {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255,255,255,0.6);
+    box-shadow: 0 -4px 10px #d2d2d2;
+    border-radius: 15px;
+    width: 100%;
+    /*margin-right: 50px;*/
+    /*margin-left: 50px;*/
+}
+
+.right-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-col {
+    display: flex;
+    flex-direction: column;
+}
