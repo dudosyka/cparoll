@@ -39,21 +39,22 @@ const changeBlock = function (type) {
 }
 
 const animate = function (scrollPos) {
-    if (scrollPos >= 230) {
+    console.log()
+    if (scrollPos >= document.getElementById('block2Content_').offsetTop - window.innerHeight) {
         document.getElementById('block2Content').style.left = "250px";
         document.getElementById('block2Content_').style.left = "-180px";
     }
-    else if (scrollPos < 200) {
+    else if (scrollPos < document.getElementById('block2Content').offsetTop - window.innerHeight) {
         document.getElementById('block2Content').style.left = "-1000px";
         document.getElementById('block2Content_').style.left = "-1000px";
     }
-    if (scrollPos >= 1550) {
+    if (scrollPos >= document.getElementById('block3Content').offsetTop - window.innerHeight) {
         document.getElementById('block3Content').style.left = "0px";
     }
     else {
         document.getElementById('block3Content').style.left = "-1000px";
     }
-    if (scrollPos >= 2500) {
+    if (scrollPos >= document.getElementById('block4Content').offsetTop - window.innerHeight) {
         document.getElementById('block4Content').style.left = "0px";
     }
     else {
