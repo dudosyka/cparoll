@@ -10,6 +10,7 @@ const changeBlock = function (type) {
 }
 
 let section = 0;
+let scrollDelta = 0;
 
 const blockedKeys = {37: 1, 38: 1, 39: 1, 40: 1}
 
@@ -23,11 +24,25 @@ const scroll = () => {
 
 const preventDefault = e => {
     e.preventDefault()
-    console.log(e);
-    if (e.deltaY > 0 && section < 3)
+    if (scrollDelta < 0 && e.deltaY > 0) {
+        scrollDelta = 0;
+        scrollDelta += e.deltaY
+    }
+    else if (scrollDelta > 0 && e.deltaY < 0) {
+        scrollDelta = 0;
+        scrollDelta += e.deltaY
+    }
+    else {
+        scrollDelta += e.deltaY
+    }
+    if (e.deltaY > 0 && section < 3 && Math.abs(scrollDelta) >= 300) {
         section++;
-    else if (e.deltaY < 0 && section > 0)
+        scrollDelta = 0;
+    }
+    else if (e.deltaY < 0 && section > 0 && Math.abs(scrollDelta) >= 300) {
         section--;
+        scrollDelta = 0;
+    }
     scroll();
 }
 
