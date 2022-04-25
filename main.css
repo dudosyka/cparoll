@@ -7,7 +7,7 @@ body {
 }
 
 .displayNone {
-    display: none;
+    display: none !important;
 }
 
 .scroll-label {
@@ -122,6 +122,22 @@ ul li::before {
     right: 250px;
 }
 
+.clicks {
+    background: linear-gradient(103.6deg, #38F9D7 3.54%, #43E97B 111.92%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.profits {
+    background: linear-gradient(94.28deg, #9340FC 12.9%, #5D5FEF 87.63%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
 .second {
     display: flex;
     flex-direction: row;
@@ -144,6 +160,43 @@ ul li::before {
     bottom: 20px;
 }
 
+.second-right {
+    background: linear-gradient(144.14deg, rgba(255, 255, 255, 0.6) 3.57%, rgba(255, 255, 255, 0.6) 100.7%);
+    /* glass blur */
+    backdrop-filter: blur(15px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 32px;
+    height: fit-content;
+    padding: 50px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.second-right h3 {
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.second-right li {
+    font-size: 24px;
+}
+
+.btn-approach {
+    background: linear-gradient(103.6deg, #38F9D7 3.54%, #43E97B 111.92%);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
+    border-radius: 9px;
+    color: white;
+    width: fit-content;
+    padding: 10px;
+    font-size: 24px;
+    position: relative;
+    top: 70px;
+    align-self: center;
+    cursor: pointer;
+}
+
 html.w-mod-js *[data-ix="fade-in-heading"] {
     opacity: 0;
     -webkit-transform: translate(0px, -30px);
@@ -161,14 +214,15 @@ html.w-mod-js *[data-ix="fade-in-heading-2"] {
 #block2Content {
     left: 100px;
     transition-duration: 1s;
+    transition-property: opacity;
     opacity: 1;
     z-index: 1000;
 }
 
 #block2Content_ {
+    display: none;
     transition-duration: 1s;
-    padding-right: 100px;
-    padding-left: 100px;
+    transition-property: opacity;
     opacity: 0;
 }
 
@@ -189,17 +243,6 @@ ul li:last-child {
     margin-bottom: 16px;
 }
 
-.second-aside p {
-    color: #00A3FF;
-    text-decoration: underline;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 48px;
-    position: relative;
-    right: 10px;
-    cursor: pointer;
-}
-
 .second aside h2 {
     font-size: 90px;
     line-height: 75px;
@@ -208,25 +251,42 @@ ul li:last-child {
     right: 80px;
 }
 
-.second .scroll-label {
-    position: relative;
-    top: 150px
-}
-
 .third {
     display: flex;
     flex-direction: row;
 }
 
+.left {
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: 90%;
+    margin-right: 5%;
+    display: flex;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.right img {
+    width: 70%;
+}
+
 .third aside {
-    background-color: rgba(255, 255, 255, 0.6);
+    background: linear-gradient(134.64deg, rgba(245, 245, 245, 0.15) 0%, rgba(255, 255, 255, 0.15) 100.64%);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
     border-radius: 15px;
     padding: 50px;
-    width: 60%;
-    text-align: center;
+    width: 80%;
     height: fit-content;
     transition-duration: 1s;
     position: relative;
+    display: flex;
+    flex-direction: row;
 }
 
 .third aside h2 {
@@ -253,14 +313,15 @@ ul li:last-child {
     display: flex;
     flex-direction: row;
     height: fit-content;
-    width: 70%;
-    margin-bottom: 35vh;
+    width: 90%;
+    margin-bottom: 33vh;
 }
 
 .fourth > aside {
     flex-direction: column !important;
-    background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(134.64deg, rgba(245, 245, 245, 0.82) 0%, rgba(255, 255, 255, 0.82) 100.64%);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
     border-radius: 15px;
     transition-duration: 1s;
     position: relative;
@@ -281,8 +342,9 @@ ul li:last-child {
 .form {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    background-color: rgba(255,255,255,0.6);
+    justify-content: space-around;background: linear-gradient(134.64deg, rgba(245, 245, 245, 0.47) 0%, rgba(255, 255, 255, 0.47) 100.64%);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
     border-radius: 15px;
     width: 100%;
     padding: 50px 50px 0;
@@ -312,7 +374,7 @@ ul li:last-child {
 
 .field input, textarea {
     padding: 10px;
-    font-size: 24px;
+    font-size: 1.875rem;
     color: #ABABAB;
     border-radius: 9px;
     text-align: center;
@@ -329,6 +391,13 @@ ul li:last-child {
     padding: 10px 35px;
     align-self: center;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 79.52%;
+    /* or 16px */
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #F6F6F6;
 }
 
 .form-footer, .form-footer-right {
@@ -347,8 +416,9 @@ ul li:last-child {
     background: linear-gradient(134.64deg, rgba(245, 245, 245, 0.64) 0%, rgba(255, 255, 255, 0.64) 100.64%);
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(4px);
-    /* Note: backdrop-filter has minimal browser support */
     border-radius: 16px;
+    border: 1px solid;
+    border-image-source: linear-gradient(134.56deg, #FFFFFF 1.97%, rgba(56, 249, 215, 0.51) 100%);
     padding: 20px 30px 10px;
     height: fit-content;
     position: relative;
@@ -375,7 +445,7 @@ ul li:last-child {
     width: 70%;
     justify-content: space-around;
     position: relative;
-    top: 65px
+    top: 85px
 }
 
 

@@ -1,10 +1,14 @@
 const writer = function (i = 0, text = "", element) {
     if (i < text.length) {
-        element.innerHTML += text.charAt(i)
+        element.innerHTML = element.innerHTML.substr(0, element.innerHTML.length - 1);
+        element.innerHTML += text.charAt(i) + "|"
         i++
         setTimeout(() => {
             writer(i, text, element)
         }, 75)
+    }
+    else {
+        element.innerHTML = element.innerHTML.substr(0, element.innerHTML.length - 1);
     }
 }
 
@@ -26,8 +30,13 @@ const changeBlock = function (type) {
         })
         document.getElementById('block2Content_').style.opacity = '0'
         setTimeout(() => {
-            document.getElementById('block2Content').style.opacity = '1'
-        }, 300)
+            console.log('animation closed');
+            document.getElementById('block2Content_').style.display = 'none';
+            document.getElementById('block2Content').style.display = 'flex';
+            setTimeout(() => {
+                document.getElementById('block2Content').style.opacity = '1'
+            }, 100)
+        }, 1000)
     }
     else {
         const el = document.getElementById('retype');
@@ -36,8 +45,13 @@ const changeBlock = function (type) {
         })
         document.getElementById('block2Content').style.opacity = '0';
         setTimeout(() => {
-            document.getElementById('block2Content_').style.opacity = '1'
-        }, 300)
+            console.log('animation closed');
+            document.getElementById('block2Content').style.display = 'none';
+            document.getElementById('block2Content_').style.display = 'flex';
+            setTimeout(() => {
+                document.getElementById('block2Content_').style.opacity = '1'
+            }, 100)
+        }, 1000)
     }
 }
 
@@ -86,25 +100,24 @@ const animate = function (scrollPos) {
         document.getElementById('block3Content').style.opacity = '0'
     }
     if (scrollPos >= document.getElementById('block2Content_').offsetTop - window.innerHeight && scrollPos <= document.getElementById('block2Content_').offsetTop + 100) {
-        document.getElementById('block2Content').style.left = "250px";
-        if (currentBlock2 == 1)
-            document.getElementById('block2Content').style.opacity = '1'
-        else
-            document.getElementById('block2Content_').style.opacity = '1'
+        document.getElementById('block2Content').style.left = "-1000px";
+        // document.getElementById('block2Content').style.opacity = '0'
+        document.getElementById('block2Content_').style.left = "-1000px";
+        // document.getElementById('block2Content_').style.opacity = '0'
+        if (currSection != 1)
+            changeLabel( "sd")
+        currSection = 1;
+        return
+    }
+    else if (scrollPos < document.getElementById('block2Content').offsetTop - window.innerHeight / 2) {document.getElementById('block2Content').style.left = "250px";
+        // if (currentBlock2 == 1)
+        // document.getElementById('block2Content').style.opacity = '1'
+        // else
+        // document.getElementById('block2Content_').style.opacity = '1'
         document.getElementById('block2Content_').style.left = "-180px";
         if (currSection != 2)
             changeLabel( "p")
         currSection = 2
-        return
-    }
-    else if (scrollPos < document.getElementById('block2Content').offsetTop - window.innerHeight) {
-        document.getElementById('block2Content').style.left = "-1000px";
-        document.getElementById('block2Content').style.opacity = '0'
-        document.getElementById('block2Content_').style.left = "-1000px";
-        document.getElementById('block2Content_').style.opacity = '0'
-        if (currSection != 1)
-            changeLabel( "sd")
-        currSection = 1;
         return
     }
     return;
@@ -120,5 +133,21 @@ const scrollToSec = function (num) {
         left: 0,
         behavior: 'smooth'
     })
-
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    console.log(111);
+    writer(0, "performance", document.getElementById('title-writer-first'))
+    setTimeout(() => {
+        writer(0, "agency", document.getElementById('title-writer-second'))
+        setTimeout(() => {
+            const el = document.getElementById('title-writer-second');
+            setInterval(() => {
+                el.innerHTML += "|"
+                setTimeout(() => {
+                    el.innerHTML = el.innerHTML.substr(0, el.innerHTML.length - 1);
+                }, 300)
+            }, 600)
+        }, 530)
+    }, 925);
+});
