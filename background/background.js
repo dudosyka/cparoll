@@ -492,21 +492,21 @@ for (let i = 0; i < 2; i++) {
     orbs.push(orb);
 }
 
-// for (let i = 0; i < 4; i++) {
-//     const orb = new OrbLeft(colorPalette.randomColor(0), window.innerWidth - 200, 0);
-//
-//     app.stage.addChild(orb.graphics);
-//
-//     orbs.push(orb);
-// }
+for (let i = 0; i < 4; i++) {
+    const orb = new OrbLeft(colorPalette.randomColor(0), window.innerWidth - 200, 0);
 
-// for (let i = 0; i < 4; i++) {
-//     const orb = new OrbLeftDown(colorPalette.randomColor(0), window.innerWidth - 200, 0);
-//
-//     app.stage.addChild(orb.graphics);
-//
-//     orbs.push(orb);
-// }
+    app.stage.addChild(orb.graphics);
+
+    orbs.push(orb);
+}
+
+for (let i = 0; i < 4; i++) {
+    const orb = new OrbLeftDown(colorPalette.randomColor(0), window.innerWidth - 200, 0);
+
+    app.stage.addChild(orb.graphics);
+
+    orbs.push(orb);
+}
 
 // Animate!
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
