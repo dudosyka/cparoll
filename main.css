@@ -172,6 +172,7 @@ ul li::before {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .second-right h3 {
@@ -214,17 +215,16 @@ html.w-mod-js *[data-ix="fade-in-heading-2"] {
 }
 
 #block2Content {
-    left: 100px;
-    transition-duration: 1s;
-    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-property: opacity, bottom;
     opacity: 1;
     z-index: 1000;
 }
 
 #block2Content_ {
     display: none;
-    transition-duration: 1s;
-    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-property: opacity, bottom;
     opacity: 0;
 }
 
@@ -295,7 +295,7 @@ ul li:last-child {
 
 .bottom-sec {
     width: 100%;
-    margin-top: -400px;
+    margin-top: -200px;
     background: linear-gradient(134.64deg, rgba(245, 241, 248, 0.82) 0%, rgba(255, 255, 255, 0.82) 100.64%);
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(4px);
@@ -314,7 +314,7 @@ ul li:last-child {
     border-radius: 15px;
     width: 80%;
     height: fit-content;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -354,7 +354,7 @@ ul li:last-child {
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(4px);
     border-radius: 15px;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     position: relative;
 }
 

@@ -72,7 +72,7 @@ const changeLabel = function (img) {
 
 const animate = function (scrollPos) {
     if (scrollPos >= document.getElementById('block4Content').offsetTop - window.innerHeight) {
-        document.getElementById('block4Content').style.left = "0px";
+        document.getElementById('block4Content').style.bottom = "0px";
         setTimeout(() => {
             document.getElementById('block4Content').style.opacity = '1'
         }, 200)
@@ -82,11 +82,11 @@ const animate = function (scrollPos) {
         return
     }
     else {
-        document.getElementById('block4Content').style.left = "-1000px";
+        document.getElementById('block4Content').style.bottom = "-400px";
         document.getElementById('block4Content').style.opacity = '0'
     }
     if (scrollPos >= document.getElementById('block3Content').offsetTop - window.innerHeight) {
-        document.getElementById('block3Content').style.left = "0px";
+        document.getElementById('block3Content').style.bottom = "0px";
         setTimeout(() => {
             document.getElementById('block3Content').style.opacity = '1'
         }, 200)
@@ -96,25 +96,26 @@ const animate = function (scrollPos) {
         return
     }
     else {
-        document.getElementById('block3Content').style.left = "-1000px";
+        document.getElementById('block3Content').style.bottom = "-400px";
         document.getElementById('block3Content').style.opacity = '0'
     }
     if (scrollPos >= document.getElementById('block2Content_').offsetTop - window.innerHeight && scrollPos <= document.getElementById('block2Content_').offsetTop + 100) {
-        document.getElementById('block2Content').style.left = "-1000px";
-        // document.getElementById('block2Content').style.opacity = '0'
-        document.getElementById('block2Content_').style.left = "-1000px";
-        // document.getElementById('block2Content_').style.opacity = '0'
+        document.getElementById('block2Content').style.bottom = "-400px";
+        document.getElementById('block2Content').style.opacity = '0'
+        document.getElementById('block2Content_').style.bottom = "-400px";
+        document.getElementById('block2Content_').style.opacity = '0'
         if (currSection != 1)
             changeLabel( "sd")
         currSection = 1;
         return
     }
-    else if (scrollPos < document.getElementById('block2Content').offsetTop - window.innerHeight / 2) {document.getElementById('block2Content').style.left = "250px";
-        // if (currentBlock2 == 1)
-        // document.getElementById('block2Content').style.opacity = '1'
-        // else
-        // document.getElementById('block2Content_').style.opacity = '1'
-        document.getElementById('block2Content_').style.left = "-180px";
+    else if (scrollPos < document.getElementById('block2Content').offsetTop - window.innerHeight / 2) {
+        document.getElementById('block2Content').style.bottom = "0px";
+        document.getElementById('block2Content_').style.bottom = "0px";
+        if (currentBlock2 == 1)
+            document.getElementById('block2Content').style.opacity = '1'
+        else
+            document.getElementById('block2Content_').style.opacity = '1'
         if (currSection != 2)
             changeLabel( "p")
         currSection = 2
