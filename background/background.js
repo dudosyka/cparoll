@@ -215,11 +215,11 @@ class OrbGreen {
         const maxDist =
             window.innerWidth < 1000 ? window.innerWidth / 3 : window.innerWidth / 5;
         // the { x, y } origin for each orb (the bottom right of the screen)
-        const originX = window.innerWidth / 1.7;
+        const originX = window.innerWidth * 0.2;
         const originY =
             window.innerWidth < 1000
-                ? window.innerHeight * 0.3
-                : window.innerHeight * 0.3;
+                ? window.innerHeight * 0.7
+                : window.innerHeight * 0.7;
 
         // allow each orb to move x distance away from it's x / y origin
         return {
@@ -485,7 +485,7 @@ for (let i = 0; i < 2; i++) {
     orbs.push(orb);
 }
 for (let i = 0; i < 2; i++) {
-    const orb = new Orb(colorPalette.randomColor(0), window.innerWidth - 200, 0);
+    const orb = new OrbGreen(colorPalette.randomColor(0), window.innerWidth - 200, 0);
 
     app.stage.addChild(orb.graphics);
 
