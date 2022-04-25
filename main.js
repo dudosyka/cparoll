@@ -71,7 +71,7 @@ const changeLabel = function (img) {
 }
 
 const animate = function (scrollPos) {
-    if (scrollPos >= document.getElementById('block4Content').offsetTop - window.innerHeight) {
+    if (scrollPos >= document.getElementById('block4Content').offsetTop - window.innerHeight * 0.8) {
         document.getElementById('block4Content').style.bottom = "0px";
         setTimeout(() => {
             document.getElementById('block4Content').style.opacity = '1'
@@ -85,7 +85,7 @@ const animate = function (scrollPos) {
         document.getElementById('block4Content').style.bottom = "-400px";
         document.getElementById('block4Content').style.opacity = '0'
     }
-    if (scrollPos >= document.getElementById('block3Content').offsetTop - window.innerHeight) {
+    if (scrollPos >= document.getElementById('block3Content').offsetTop - window.innerHeight * 0.8) {
         document.getElementById('block3Content').style.bottom = "0px";
         setTimeout(() => {
             document.getElementById('block3Content').style.opacity = '1'
